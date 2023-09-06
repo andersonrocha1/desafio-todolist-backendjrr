@@ -2,6 +2,8 @@ package com.andersondev.desafiotodolist.controller;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.andersondev.desafiotodolist.model.Todo;
 import com.andersondev.desafiotodolist.services.TodoService;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("api/todos")
@@ -29,9 +33,11 @@ public class TodoController {
 
 	
 	@PostMapping
-	List<Todo> createTodo(@RequestBody Todo todo){
+	ResponseEntity<List<Todo>> createTodo(@Valid @RequestBody Todo todo){
 		
-		return todoService.createTodo(todo);
+		
+		return ResponseEntity.status(HttpStatus.CREATED)
+				.body(todoService.createTodo(todo));
 		
 	}
 	
@@ -42,10 +48,10 @@ public class TodoController {
 		
 	}
 	
-	@PutMapping
-	List<Todo> update(@RequestBody Todo todo){
+	@PutMapping("/{id}")
+	List<Todo> update(@PathVariable Long id, @RequestBody Todo todo){
 		
-		return todoService.update(todo);
+		return todoService.update(id, todo);
 		
 	}
 	
