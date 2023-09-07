@@ -1,3 +1,4 @@
+                              
                               TODO LIST
 
 # API para gerenciar tarefas (CRUD) que faz parte desse desafio para pessoas desenvolvedoras backend júnior e colocando em prática o que venho aprendendo.
@@ -68,6 +69,7 @@ $ java -jar target/todolist-0.0.1-SNAPSHOT.jar
 
 * Criar Tarefa
 
+```json
 $ http POST http://localhost:8080/api/todos
 
 {
@@ -77,7 +79,11 @@ $ http POST http://localhost:8080/api/todos
     "realizado": false
       
 }
+
+```
     Resposta
+
+```json
 [
     {
         "id": 1,
@@ -88,11 +94,13 @@ $ http POST http://localhost:8080/api/todos
     }
 ]
 
+```
 
 * Listar Tarefa
 
-$ http GET http://localhost:8080/api/todos
 
+```json
+$ http GET http://localhost:8080/api/todos
 [
     {
         "id": 1,
@@ -103,8 +111,10 @@ $ http GET http://localhost:8080/api/todos
     }
 ]
 
+```
 * Atualizar Tarefa
 
+```json
 $ http PUT http://localhost:8080/api/todos/1
 
 {
@@ -114,8 +124,11 @@ $ http PUT http://localhost:8080/api/todos/1
     "realizado": true
       
 }
+
+```
   Resposta
 
+```json
 [
     {
         "id": 1,
@@ -125,6 +138,8 @@ $ http PUT http://localhost:8080/api/todos/1
         "prioridade": 1
     }
 ]
+
+```
 
 * Remover Tarefa
 
