@@ -1,7 +1,8 @@
                               
-                              TODO LIST
+                            
+# TodoList
 
-# API para gerenciar tarefas (CRUD) que faz parte desse desafio para pessoas desenvolvedoras backend júnior e colocando em prática o que venho aprendendo.
+#### API para gerenciar tarefas (CRUD) que faz parte desse desafio para pessoas desenvolvedoras backend júnior e colocando em prática o que venho aprendendo.
 
 ## Índice
 - <a href="#tecnologiasutilizadas">Tecnologias Utilizadas</a>
